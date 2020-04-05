@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+{% for img in imgs %}
+<img src="http://{{ host }}/static/{{ img.img }}" alt="画像" width="300" height="300" border="0" />
+<a href="/static/{{ img.img }}" style="color:#FFF;"><button>Download</button></a>
+{% endfor %}
+<HR>
+<form action="/hello/upload" method="get">
+<!--    {% csrf_token %}-->
+    <input type="submit" value="返回上传文件">
+</form>
+
+</body>
+</html>

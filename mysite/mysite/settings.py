@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'easy_uploader',
     'hello.apps.HelloConfig',
     'polls.apps.PollsConfig',
     'lib.apps.LibConfig',
@@ -124,4 +125,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+# 静态路径的设定有一点难理解，默认开始都是static
+# 放在media下面的file也可以通过 satatic/file读取到，不理解参考下面的文档
+# https://code.ziqiangxuetang.com/django/django-static-files.html
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'media').replace('\\', '/'),
+    os.path.join(BASE_DIR, 'static').replace("\\", "/"),
+]
+
+# ログインURL
+LOGIN_URL = 'admin:login'

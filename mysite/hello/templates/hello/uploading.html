@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<input type="file" name="img">
+<button type="submit">上传</button>
+</form>
+<HR>
+<form action="/hello/show" method="get">
+<!--    {% csrf_token %}-->
+    <input type="submit" value="显示上传内容">
+</form>
+
+</body>
+</html>

@@ -16,13 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf.urls import url
 
 urlpatterns = [
+    # path('upld/', include('easy_uploader.urls', namespace="easy_uploader")),
+    url(r'^upld/', include('easy_uploader.urls', namespace="easy_uploader")),
     path('lib/', include('lib.urls')),
     path('admin/', admin.site.urls),
-    path('',include('lib.urls')),
-
+    path('', include('lib.urls')),
+    path('hello/', include('hello.urls')),
 ]
-
-
 
